@@ -30,11 +30,6 @@ function showtableData(rawdata ){
 
 };
 
-   
-      
-    
-
-
 //  create event handlers
 
 button.on("click",runEnter);
