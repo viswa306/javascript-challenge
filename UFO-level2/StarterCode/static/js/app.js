@@ -50,11 +50,11 @@ console.log(inputElement);
 // -------------------------------------------------------------------------------
 
 //  select the  input  element city
-// var inputCityEle = d3.select("#city");
+ var inputCityEle = d3.select("#city");
 // Get the value property of the input element
 
-// var inputCityVal = inputCityEle.property("value");
-// console.log(inputCityVal);
+var inputCityVal = inputCityEle.property("value");
+ console.log(inputCityVal);
 
 
 
@@ -67,8 +67,31 @@ var inputValue =inputElement.property("value");
 console.log(inputValue);
 console.log(tableData);
 
-//  var filterdData = tableData.filter(row =>row.datetime===inputValue && row.city === inputCityVal);
- var filterdData = tableData.filter(row =>row.datetime===inputValue);
+//   var filterdData = tableData.filter(row =>row.datetime===inputValue && row.city === inputCityVal);
+  if (inputCityVal && inputValue ){
+
+    var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.city === inputCityVal);
+ }
+ else if (!(inputCityVal) && !(inputValue)){
+ 
+     var filterdData = tableData  ;
+ 
+ }
+ 
+ else if (inputValue ){
+     var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue);
+ 
+ }
+ else{
+     var filterdData = tableData.filter(dateEle =>dateEle.city === inputCityVal); 
+ }
+  
+ 
+ 
+
+
+
+//  var filterdData = tableData.filter(row =>row.datetime===inputValue);
  console.log(filterdData);
 
  showtableData(filterdData);
@@ -79,37 +102,6 @@ console.log(tableData);
 
 
 
-//  once the data is filtered need to append  each row to the table
-// filterdData .forEach(function(filterdate){
-//     console.log(filterdate);
-
-// // --------------------- code for change event handler to clear the previous output------------------
-
-  
-  
-  
-
-
-
-
-// // ---------------------------------------------------------------------------------------------------------
-//     var tbody = d3.select("tbody");
-   
-//       var row =tbody.append("tr");
-//       // row.html("");
-//      Object.entries(filterdate).forEach(function([k,v]){
-        
-//         console.log(k,v);
-//         var cell = row.append("td");
-//         cell.text(v);
-        
-    
-//      });
-    
-    
-//     });
-
-// };
 
 
 

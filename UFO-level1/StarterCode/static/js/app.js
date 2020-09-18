@@ -50,11 +50,11 @@ console.log(inputElement);
 // -------------------------------------------------------------------------------
 
 //  select the  input  element city
-// var inputCityEle = d3.select("#city");
+var inputCityEle = d3.select("#city");
 // Get the value property of the input element
 
-// var inputCityVal = inputCityEle.property("value");
-// console.log(inputCityVal);
+var inputCityVal = inputCityEle.property("value");
+console.log(inputCityVal);
 
 
 
@@ -67,8 +67,7 @@ var inputValue =inputElement.property("value");
 console.log(inputValue);
 console.log(tableData);
 
-//  var filterdData = tableData.filter(row =>row.datetime===inputValue && row.city === inputCityVal);
- var filterdData = tableData.filter(row =>row.datetime===inputValue);
+ var filterdData = tableData.filter(row =>row.datetime===inputValue && row.city === inputCityVal);
  console.log(filterdData);
 
  showtableData(filterdData);
