@@ -60,6 +60,13 @@
  
  var inputStateVal = inputStateEle.property("value");
  console.log(inputStateVal);
+
+ //  select the input element Country
+var inputCountryele =d3.select("#country");
+
+//  Get the value property of the input element
+var inputCountryVal = inputCountryele.property("value");
+console.log(inputCountryVal);
  
  // Get the value property of the input element
  
