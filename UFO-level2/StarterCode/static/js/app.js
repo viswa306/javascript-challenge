@@ -82,64 +82,7 @@ console.log(inputCountryVal);
  
  //  var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue)
  //                             .map(dateEle => dateEle.city === inputCityVal);
- if (inputCityVal && inputValue && inputStateVal && inputCountryVal){
  
-     // var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.city === inputCityVal);
-    var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.city === inputCityVal && dateEle.state === inputStateVal && dateEle.country === inputCountryVal );
- }
- else if (!(inputCityVal) && !(inputValue) &&!(inputStateVal)&& !(inputCountryVal)){
-
-    var filterdData = tableData  ;
-
-}
-
-else if (inputValue && inputStateVal && inputCountryVal ){
-
-    var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.state === inputStateVal &&  dateEle.country === inputCountryVal );
-} 
-
-
-else if (inputCityVal && inputValue&& inputCountryVal ){
-
-
-
-    var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.city === inputCityVal && dateEle.country === inputCountryVal);
-}
-else if(inputCityVal && inputStateVal &&inputCountryVal ){
-    var filterdData = tableData.filter(dateEle => dateEle.city === inputCityVal && dateEle.state === inputStateVal && dateEle.country === inputCountryVal );
-}
-else if(inputValue&&inputCityVal ){
-
-    var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.city === inputCityVal );
-}
-
-else if(inputValue&&inputStateVal ){
-
-    var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.state === inputStateVal );
-}
-
-else if(inputValue&&inputCountryVal ){
-
-    var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue &&  dateEle.country === inputCountryVal );
-}
- else if (inputCityVal && inputStateVal){
-    var filterdData = tableData.filter(dateEle => dateEle.city === inputCityVal && dateEle.state === inputStateVal);
-
- }
-else  if (inputCityVal && inputCountryVal){
-    var filterdData = tableData.filter(dateEle => dateEle.city === inputCityVal &&dateEle.country === inputCountryVal );
-
-}
- else if (inputStateVal && inputCountryVal){
-    var filterdData = tableData.filter(dateEle =>dateEle.state === inputStateVal &&  dateEle.country === inputCountryVal);
-
- }
-
-else {
-    var filterdData = tableData.filter(dateEle => dateEle.state === inputStateVal||dateEle.city===inputCityVal|| dateEle.datetime===inputValue|| dateEle.country === inputCountryVal); 
-
-}
-
  
 
 
