@@ -20,8 +20,6 @@
          var row =tbody.append("tr");
      Object.entries(tableinfo).forEach(([k,v])=>{
  
- 
-         
          console.log(k,v);
          var cell = row.append("td");
          cell.text(v);
@@ -37,7 +35,6 @@
  
  button.on("click",runEnter);
   form.on("change",showtableData(tableData));
- // form.on("change",runEnter);
  
  //  Complete the event handler function for the form
  
@@ -49,7 +46,7 @@
  // Select the input element and get the raw html code
  var inputElement = d3.select("#datetime");
  console.log(inputElement);
- // -------------------------------------------  input city element logic--------------------------------------
+ 
  //  select the input element city
  var inputCityEle = d3.select("#city");
  
@@ -76,12 +73,67 @@ console.log(inputCountryVal);
  // Get the value property of the input element
  
  var inputValue =inputElement.property("value");
+
+ // select the input element shape
+var inputShapeEle =d3.select("#shape");
+
+// Get the value property of the input element
+
+var inputShapeVal = inputShapeEle.property("value");
+console.log(inputShapeVal);
  
  console.log(inputValue);
  console.log(tableData);
+
+ var displayData = tableData;
+
+ if (inputValue) {
+     // var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue && dateEle.city === inputCityVal);
+    var filterdData = displayData.filter(dateEle => dateEle.datetime===inputValue );
+    displayData = filterdData;
+ }
+    if(inputCityVal){
  
- //  var filterdData = tableData.filter(dateEle =>dateEle.datetime===inputValue)
- //                             .map(dateEle => dateEle.city === inputCityVal);
+     var cityData = displayData.filter(dateEle => dateEle.city === inputCityVal);
+     displayData = cityData;
+ 
+    }
+    
+    if (inputStateVal){
+        var stateData = displayData.filter(dateEle => dateEle.state === inputStateVal);
+        displayData = stateData;
+    }
+ 
+    if (inputCountryVal){
+     var countryData = displayData.filter(dateEle =>dateEle.country === inputCountryVal);
+     displayData = countryData;
+ 
+    }
+    if (inputShapeVal) {
+ 
+     var shapeData = displayData.filter(dateEle =>dateEle.shape === inputShapeVal);
+     displayData = shapeData;
+ 
+    }
+ 
+    showtableData(displayData);
+ 
+ 
+ };
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 
@@ -89,12 +141,7 @@ console.log(inputCountryVal);
 
 
 
- console.log(filterdData);
-
- showtableData(filterdData);
-
-
-};
+ 
 
 
 
