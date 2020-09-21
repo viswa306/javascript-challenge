@@ -34,14 +34,15 @@
  //  create event handlers
  
  button.on("click",runEnter);
-  form.on("change",showtableData(tableData));
+//   form.on("change",showtableData(tableData));
+form.on("submit",runEnter);
  
  //  Complete the event handler function for the form
- 
+ showtableData(tableData);
  function runEnter(){
  
  // prevent the page from refreshing
- //  d3.event.preventDefault();
+   d3.event.preventDefault();
  
  // Select the input element and get the raw html code
  var inputElement = d3.select("#datetime");
@@ -55,19 +56,19 @@
  
  // Get the value property of the input element
  
- var inputStateVal = inputStateEle.property("value");
+ var inputStateVal = inputStateEle.property("value").toLowerCase();
  console.log(inputStateVal);
 
  //  select the input element Country
 var inputCountryele =d3.select("#country");
 
 //  Get the value property of the input element
-var inputCountryVal = inputCountryele.property("value");
+var inputCountryVal = inputCountryele.property("value").toLowerCase();
 console.log(inputCountryVal);
  
  // Get the value property of the input element
  
- var inputCityVal = inputCityEle.property("value");
+ var inputCityVal = inputCityEle.property("value").toLowerCase();
  console.log(inputCityVal);
  
  // Get the value property of the input element
@@ -79,7 +80,7 @@ var inputShapeEle =d3.select("#shape");
 
 // Get the value property of the input element
 
-var inputShapeVal = inputShapeEle.property("value");
+var inputShapeVal = inputShapeEle.property("value").toLowerCase();
 console.log(inputShapeVal);
  
  console.log(inputValue);
